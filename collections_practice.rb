@@ -1,5 +1,3 @@
-require 'pry'
-
 def sort_array_asc(intArray)
   intArray.sort
 end
@@ -62,14 +60,23 @@ def sum_array(intArray)
 end
 
 def add_s(strArray)
-  newArray = []
-  strArray.each do |string|
-    if string != "feet" then
-      tempArray = string.split('')
-      tempArray << "s"
-      string = tempArray.join('')
+  # newArray = []
+  # strArray.each do |string|
+  #   if string != "feet" then
+  #     tempArray = string.split('')
+  #     tempArray << "s"
+  #     string = tempArray.join('')
+  #   end
+  #     newArray << string
+  # end
+  # return newArray
+
+  strArray.each_with_index.collect { |element, index|
+    if element != "feet" then
+          tempArray = element.split('')
+          tempArray << "s"
+          element = tempArray.join
     end
-      newArray << string
-  end
-  return newArray
+    strArray[index]= element
+}
 end
