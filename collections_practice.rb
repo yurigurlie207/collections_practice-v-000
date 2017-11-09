@@ -78,5 +78,5 @@ def add_s(strArray)
           element = tempArray.join
     end
     strArray[index]= element
-}
+  }
 end
